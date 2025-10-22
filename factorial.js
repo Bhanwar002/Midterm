@@ -1,22 +1,29 @@
+// =========================
+//  Factorial Calculation
+// =========================
 function calculateFactorial() {
-  const inputEl = document.getElementById("userInput");
-  const outputEl = document.getElementById("output");
-  const value = inputEl.value.trim();
+  const inputField = document.getElementById("userInput");
+  const outputDiv = document.getElementById("output");
+  const inputValue = inputField.value.trim();
 
-  if (value === "" || isNaN(value) || value < 0) {
-    outputEl.innerText = "Please enter a non-negative integer.";
+  if (inputValue === "" || isNaN(inputValue) || inputValue < 0) {
+    outputDiv.innerText = "Please enter a non-negative number.";
     return;
   }
 
-  const n = parseInt(value, 10);
-  let factorial = BigInt(1); // using BigInt to allow larger values
+  const n = parseInt(inputValue, 10);
+  let factorial = 1;
+
   for (let i = 1; i <= n; i++) {
-    factorial *= BigInt(i);
+    factorial *= i;
   }
 
-  outputEl.innerText = `${n}! = ${factorial.toString()}`;
+  outputDiv.innerText = `${n}! = ${factorial}`;
 }
 
+// =========================
+//  Theme Switch
+// =========================
 function setTheme(mode) {
   document.body.setAttribute("data-bs-theme", mode);
 }

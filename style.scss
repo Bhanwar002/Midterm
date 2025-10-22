@@ -1,100 +1,145 @@
-// Theme palette
-$light-bg: #f9f9f9;
+// ==============================
+// VARIABLES
+// ==============================
+$accent: #ff6b6b;
+$dark-bg: #1c1c1c;
+$dark-header: #3a3a3a;
+$dark-input: #2b2b2b;
+$dark-brown: #5a4200;
+$light-bg: #f5f5f5;
 $light-header: #ddd;
-$light-instr-bg: #fff;
-$light-output-bg: #6b4f00; // the brown color for output in screenshot
-$light-output-text: #fff;
+$light-brown: #6b4f00;
 
-$dark-bg: #212121;
-$dark-header: #333;
-$dark-instr-bg: #2b2b2b;
-$dark-output-bg: #593f00; // slightly darker brown
-$dark-output-text: #fff;
-
-$primary-text: #ff6b6b; // reddish accent for links
-
+// ==============================
+// GLOBAL
+// ==============================
 body {
   font-family: Arial, sans-serif;
-  background-color: $light-bg;
-  color: #000;
+  background-color: $dark-bg;
+  color: #fff;
+  min-height: 100vh;
+  margin: 0;
 }
 
-a {
-  color: $primary-text;
-  margin-right: 1rem;
-  text-decoration: none;
+// ==============================
+// HEADER
+// ==============================
+.header-bar {
+  background-color: $dark-header;
+
+  a {
+    color: $accent;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.btn-theme {
+  background-color: #555;
+  color: white;
+  border: none;
+  margin-left: 6px;
 
   &:hover {
-    text-decoration: underline;
+    background-color: #777;
   }
 }
 
-.header-bar {
-  background-color: $light-header;
-}
-
+// ==============================
+// MAIN CONTENT
+// ==============================
 .instruction-box {
-  background-color: $light-instr-bg;
-  border: 1px solid #ccc;
-  h5 {
-    margin-bottom: 0.5rem;
-    color: $primary-text;
+  color: #aeb6ff;
+  background: transparent;
+  max-width: 260px;
+
+  h6 {
+    margin: 0 0 6px 0;
+    font-size: 0.95rem;
   }
+
   p {
-    line-height: 1.4;
+    margin: 0 0 10px 0;
+    line-height: 1.25;
   }
 }
 
-.form-card {
-  background-color: $light-bg;
-  border: 1px solid #ccc;
+.factorial-container {
+  display: flex;
+  flex-direction: column;
 }
 
-.input-area {
-  background-color: #2e2e2e;
+.input-box {
+  background-color: $dark-input;
+  border: 1px solid #444;
   color: #fff;
-  border: none;
-  resize: none;
+  padding: 12px;
+  font-size: 1.2rem;
+
+  &::placeholder {
+    color: #aaa;
+  }
 }
 
-.output-area {
-  background-color: $light-output-bg;
-  color: $light-output-text;
-  min-height: 4rem;
+.output-box {
+  background-color: $dark-brown;
+  color: #fff;
+  border: 1px solid #3e2f00;
+  min-height: 80px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  padding: 16px;
 }
 
+// ==============================
+// FOOTER
+// ==============================
 .footer-bar {
-  background-color: $light-header;
+  background-color: $dark-header;
   color: #fff;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 8px 0;
 }
 
-// Dark theme overrides
-[data-bs-theme="dark"] {
-  body {
-    background-color: $dark-bg;
-    color: #fff;
-  }
+// ==============================
+// LIGHT THEME OVERRIDES
+// ==============================
+[data-bs-theme="light"] {
+  background-color: $light-bg;
+  color: #000;
+
   .header-bar {
-    background-color: $dark-header;
+    background-color: $light-header;
   }
+
+  .input-box {
+    background-color: #f9f9f9;
+    color: #000;
+  }
+
+  .output-box {
+    background-color: $light-brown;
+    color: #fff;
+  }
+}
+
+// ==============================
+// RESPONSIVE
+// ==============================
+@media (max-width: 767.98px) {
   .instruction-box {
-    background-color: $dark-instr-bg;
-    border: 1px solid #555;
+    max-width: 100%;
+    margin-bottom: 20px;
   }
-  .form-card {
-    background-color: $dark-bg;
-    border: 1px solid #555;
-  }
-  .input-area {
-    background-color: #1e1e1e;
-    color: #fff;
-  }
-  .output-area {
-    background-color: $dark-output-bg;
-    color: $dark-output-text;
-  }
-  .footer-bar {
-    background-color: #444;
-    color: #fff;
+
+  .output-box {
+    min-height: 60px;
   }
 }
