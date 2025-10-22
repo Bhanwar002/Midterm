@@ -1,0 +1,90 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #000;
+}
+
+a {
+  color: #ff6b6b;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.header-bar {
+  background-color: #ddd;
+}
+
+.instruction-box {
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.instruction-box h5 {
+  margin-bottom: 0.5rem;
+  color: #ff6b6b;
+}
+
+.instruction-box p {
+  line-height: 1.4;
+}
+
+.form-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+}
+
+.input-area {
+  background-color: #2e2e2e;
+  color: #fff;
+  border: none;
+  resize: none;
+}
+
+.output-area {
+  background-color: #6b4f00; /* brown background */
+  color: #fff;
+  min-height: 4rem;
+}
+
+.footer-bar {
+  background-color: #ddd;
+  color: #fff;
+}
+
+[data-bs-theme="dark"] body {
+  background-color: #212121;
+  color: #fff;
+}
+
+[data-bs-theme="dark"] .header-bar {
+  background-color: #333;
+}
+
+[data-bs-theme="dark"] .instruction-box {
+  background-color: #2b2b2b;
+  border: 1px solid #555;
+}
+
+[data-bs-theme="dark"] .form-card {
+  background-color: #212121;
+  border: 1px solid #555;
+}
+
+[data-bs-theme="dark"] .input-area {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+[data-bs-theme="dark"] .output-area {
+  background-color: #593f00; /* darker brown for dark mode */
+  color: #fff;
+}
+
+[data-bs-theme="dark"] .footer-bar {
+  background-color: #444;
+  color: #fff;
+}
